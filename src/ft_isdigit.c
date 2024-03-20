@@ -6,7 +6,16 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:03:19 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/20 02:03:20 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:02:33 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/libft.h"
+
+int	ft_isdigit(int c)
+{
+	int	rendue;
+
+	rendue = ((c >= 48 && c <= 57));
+	return (rendue * 2048);
+}
