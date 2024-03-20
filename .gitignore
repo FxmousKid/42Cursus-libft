@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 20:30:59 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/20 02:31:04 by inazaria         ###   ########.fr        #
+#    Updated: 2024/03/20 23:09:40 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,5 +14,9 @@
 .vscode/
 compile_commands.json 
 
+test_library
+
 src/main.c
 src/bonus/main.c
+src/*.o
+src/bonus/*.o
