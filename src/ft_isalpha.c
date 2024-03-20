@@ -6,7 +6,16 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:04:02 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/20 02:04:03 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:46:51 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/libft.h"
+
+int	ft_isalpha(int c)
+{
+	int	rendue;
+
+	rendue = ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	return (rendue * 1024);
+}
