@@ -6,7 +6,13 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:04:35 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/20 02:04:36 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:58:45 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/libft.h"
+
+int	ft_isalnum(int c)
+{
+	return (8 * (ft_isdigit(c) || ft_isalpha(c)));
+}
