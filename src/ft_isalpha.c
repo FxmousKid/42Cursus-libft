@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:04:02 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/20 21:46:51 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/22 00:41:16 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_isalpha(int c)
 {
 	int	rendue;
 
-	rendue = ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	rendue = ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 	return (rendue * 1024);
 }
