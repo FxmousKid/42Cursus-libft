@@ -6,7 +6,14 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:03:51 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/20 02:03:52 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/21 00:41:26 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_isascii(int c)
+{
+	int	rendue;
+
+	rendue = (c >= 0 && c <= 127);
+	return (rendue * 1);
+}
