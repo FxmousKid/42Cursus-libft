@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:55:50 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 00:34:07 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:43:08 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,63 +14,54 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static int	calc_size_malloc(int size, char **strs, char *sep)
+static int	calc_size_malloc(char const *s1, char const *s2)
 {
 	int	size_malloc;
 
 	size_malloc = 1;
-	if (sep == NULL || strs == NULL || size == 0)
-		return (size_malloc);
-	size_malloc += ((size - 1) * ft_strlen(sep));
-	while (size-- > 0)
-	{
-		if (*strs == NULL)
-			return (-1);
-		size_malloc += ft_strlen(*strs++);
-	}
+	if (s1 == NULL || s2 == NULL)
+		return (-1);
+	size_malloc += ft_strlen(s1);
+	size_malloc += ft_strlen(s2);
 	return (size_malloc);
 }
 
-static char	*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, char const *src)
 {
+	int	counter;
+	
 	if (src == NULL)
 		return (NULL);
-	while (*src)
-		*dest++ = *src++;
+	counter = 0;
+	while (src[counter])
+		*dest++ = src[counter++];
 	return (dest);
 }
 
-static char	*join_strs(int size, char **strs, char *dest, char *sep)
+static char	*join_strs(char *dest, char const *s1, char const *s2)
 {
 	char	*tmp;
 
 	tmp = dest;
-	while (size-- > 1)
-	{
-		if (*strs == NULL)
-			return (NULL);
-		tmp = ft_strcat(tmp, *strs++);
-		tmp = ft_strcat(tmp, sep);
-	}
-	tmp = ft_strcat(tmp, *strs);
+	tmp = ft_strcat(tmp, s1);
+	tmp = ft_strcat(tmp, s2);
 	*++tmp = '\0';
 	return (dest);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*tab;
 	int		size_malloc;
 
-	if (size == 0 || strs == NULL || sep == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	size_malloc = calc_size_malloc(size, strs, sep);
+	size_malloc = calc_size_malloc(s1, s2);
 	if (size_malloc == -1)
 		return (NULL);
 	tab = (char *) malloc(sizeof(char) * (size_malloc + 1));
 	if (tab == NULL)
 		return (NULL);
-	if (join_strs(size, strs, tab, sep) == NULL)
-		return (NULL);
+	join_strs(tab, s1, s2);
 	return (tab);
 }
