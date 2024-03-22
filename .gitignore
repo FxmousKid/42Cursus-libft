@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 20:30:59 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/22 01:22:54 by inazaria         ###   ########.fr        #
+#    Updated: 2024/03/22 16:49:42 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,4 +27,5 @@ vgcore*
 ***.o
 **main.c
 **a.out
-libft.a
+libft*
+
