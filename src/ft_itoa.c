@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:02:30 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/21 01:46:58 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:08:30 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char	*ft_itoa_long(long num)
 	return (str);
 }
 
-char	*ft_itoa(int num)
+char	*ft_itoa(int n)
 {
-	return (ft_itoa_long(num));
+	return (ft_itoa_long(n));
 }
