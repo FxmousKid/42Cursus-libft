@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:57:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 01:05:47 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:57:52 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,81 +14,108 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	occurences(char c, char *sep_charset)
+static int		ft_hm(char const *s, char c)
 {
-	while (sep_charset && c && *sep_charset)
+	size_t	nbr;
+	int		i;
+
+	nbr = 0;
+	i = 0;
+	while (s[i])
 	{
-		if (c == *sep_charset++)
-			return (1);
+		while (s[i] == c)
+			i++;
+		if (i > 0 && s[i] && s[i - 1] == c)
+			nbr++;
+		if (s[i])
+			i++;
 	}
-	if (c == '\0')
-		return (1);
-	return (0);
-}
-
-// implementing a count word that works with a (char *) as a sep
-int	count_words(char *str, char *sep)
-{
-	int	wordcount;
-	int	f_change;
-
-	if (str == NULL || sep == NULL)
+	if (nbr == 0 && s[i - 1] == c)
 		return (0);
-	wordcount = 0;
-	f_change = 1;
-	while (*str)
-	{
-		wordcount += (f_change && !occurences(*str, sep));
-		f_change = (occurences(*str++, sep));
-	}
-	return (wordcount);
+	if (s[0] != c)
+		nbr++;
+	return (nbr);
 }
 
-void	ft_strncpy(char *dest, char *src, char *sep)
+static char		**ft_mal(char **strs, char const *s, char c)
 {
-	int	counter;
+	size_t	count;
+	int		i;
+	int		h;
 
-	if (!src && !*src)
-		return ;
-	counter = -1;
-	while (src[++counter] && !occurences(src[counter], sep))
-		dest[counter] = src[counter];
-	dest[counter] = '\0';
-	return ;
-}
-
-void	sub_split(char **tab, char *str, char *charset)
-
-{
-	int	len_word;
-
-	len_word = 0;
-	while (str && charset && *str)
+	count = 0;
+	i = 0;
+	h = 0;
+	while (s[h])
 	{
-		if (!occurences(*str, charset))
+		if (s[h] != c)
+			count++;
+		else if (h > 0 && s[h - 1] != c)
 		{
-			while (!occurences(*(str + len_word), charset))
-				len_word++;
-			*tab = (char *) malloc((sizeof(char) * len_word) + 1);
-			if (*tab == NULL)
-				return ;
-			ft_strncpy(*tab++, str, charset);
-			str += len_word;
-			len_word = 0;
+			strs[i] = malloc(sizeof(char) * (count + 1));
+			if (!strs[i])
+				return (0);
+			count = 0;
+			i++;
 		}
-		else if (occurences(*str, charset))
-			str++;
+		if (s[h + 1] == '\0' && s[h] != c)
+			if (!(strs[i] = malloc(sizeof(char) * count + 1)))
+				return (0);
+		h++;
 	}
-	*tab = NULL;
+	return (strs);
 }
 
-char	**ft_split(char *str, char *charset)
+static char		**ft_cpy(char **strs, char const *s, char c)
 {
-	char	**tab;
+	int i;
+	int j;
+	int h;
 
-	tab = (char **) malloc(sizeof(char *) * (count_words(str, charset) + 1));
-	if (tab == NULL)
+	i = 0;
+	j = 0;
+	h = 0;
+	while (s[h])
+	{
+		if (s[h] != c)
+			strs[i][j++] = s[h];
+		else if (h > 0 && s[h - 1] != c)
+			if (h != 0)
+			{
+				strs[i][j] = '\0';
+				j = 0;
+				i++;
+			}
+		if (s[h + 1] == '\0' && s[h] != c)
+			strs[i][j] = '\0';
+		h++;
+	}
+	return (strs);
+}
+
+char			**ft_split(char const *s, char c)
+{
+	char	**rtn;
+	int		nbr_w;
+
+	if (!s || !*s)
+	{
+		if (!(rtn = malloc(sizeof(char *) * 1)))
+			return (NULL);
+		*rtn = (void *)0;
+		return (rtn);
+	}
+	nbr_w = ft_hm(s, c);
+	rtn = malloc(sizeof(char *) * (nbr_w + 1));
+	if (!rtn)
 		return (0);
-	sub_split(tab, str, charset);
-	return (tab);
+	if (ft_mal(rtn, s, c) != 0)
+		ft_cpy(rtn, s, c);
+	else
+	{
+		free(rtn);
+		return (NULL);
+	}
+	rtn[nbr_w] = (void *)0;
+	return (rtn);
 }
