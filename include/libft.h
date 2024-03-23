@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 23:20:19 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/23 01:55:24 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif 
