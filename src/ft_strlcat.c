@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:55:39 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 01:54:44 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/23 12:34:55 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);
-	if (size >= len_dst)
+	if (len_dst >= size)
 		return (len_src + len_dst);
 	counter = -1;
 	while (src[++counter] && len_dst + counter < size - 1)
