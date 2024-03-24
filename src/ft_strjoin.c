@@ -6,13 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:55:50 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 17:43:08 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:11:54 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 static int	calc_size_malloc(char const *s1, char const *s2)
 {

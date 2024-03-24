@@ -6,13 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:57:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 17:57:52 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:11:45 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 static int		ft_hm(char const *s, char c)
 {

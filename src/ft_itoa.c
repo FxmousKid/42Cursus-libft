@@ -6,13 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:02:30 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 17:08:30 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:11:28 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	powerof10(int n)
 {
