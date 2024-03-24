@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/22 00:59:55 by inazaria         ###   ########.fr        #
+#    Updated: 2024/03/24 01:28:20 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,11 @@ C_FILES_BONUS = ft_listmap_bonus.c   ft_lstiter_bonus.c      ft_lstclear_bonus.c
 				ft_lstdelone_bonus.c ft_lastadd_back_bonus.c ft_lstlast_bonus.c  \
 				ft_lstsize_bonus.c   ft_lstadd_front_bonus.c ft_lstnew_bonus.c
 
+TEST_TXT_FILES = Test_ft_putchar_fd.txt        Test_ft_putendl_fd.txt       \
+				 Test_ft_putnbr_fd_INT_MAX.txt Test_ft_putnbr_fd_INT_MIN.txt \
+				 Test_ft_putnbr_fd_minus_1.txt Test_ft_putstr_fd.txt
+
+
 SRC_PATH           = ./src/
 SRC_PATH_BONUS     = ./src/bonus/
 HEADERPATH         = ./include/
@@ -34,7 +39,7 @@ OBJ_FILES_BONUS    = $(SRC_FILES_BONUS:.c=.o)
 OBJ_FILES          = $(SRC_FILES:.c=.o)
 
 CFLAGS             = -Wall -Wextra -Werror -g3
-OUTPUT             = libft 
+OUTPUT             = libft.a 
 CC                 = cc
 
 RM                 = rm -rf 
@@ -44,6 +49,10 @@ TEST_LIBRARY_BONUS = @$(cc) $(OBJ_FILES_BONUS) -o test_library_bonus
 
 .c.o :
 	@$(CC) $(CFLAGS) -I $(HEADERPATH) -c $< -o $(<:.c=.o)
+
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRC_FILES) $(SRC_FILES_BONUS)
+	gcc -shared -o libft.so $(OBJ_FILES) $(OBJ_FILES)
 
 all : $(OUTPUT)  test
 
@@ -73,9 +82,10 @@ clean : $(OBJ_FILES)
 	
 
 fclean :
-	@$(RM) $(OUTPUT) $(OBJ_FILES) test_library	
+	@$(RM) $(OUTPUT) $(OBJ_FILES) $(TEST_TXT_FILES) test_library	
 	@echo -e "Removing all\033[0;31m objects files\033[0m from $(SRC_PATH)"
-	@echo -e "Removing library test file :\033[0;31m test_library\033[0m"	
+	@echo -e "Removing library test file :\033[0;31m test_library\033[0m"
+	@echo -e "Removing library\033[0;31m text\033[0m test files"
 	@echo -e "Removing bonus test files :\033[0;31m test_library_bonus\033[0m"
 	@echo -e "Removing\033[1;36m libft.a\033[0m"
 	
