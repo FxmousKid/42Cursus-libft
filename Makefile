@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/24 01:28:20 by inazaria         ###   ########.fr        #
+#    Updated: 2024/03/24 21:47:40 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,6 @@ TEST_LIBRARY_BONUS = @$(cc) $(OBJ_FILES_BONUS) -o test_library_bonus
 
 .c.o :
 	@$(CC) $(CFLAGS) -I $(HEADERPATH) -c $< -o $(<:.c=.o)
-
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRC_FILES) $(SRC_FILES_BONUS)
-	gcc -shared -o libft.so $(OBJ_FILES) $(OBJ_FILES)
 
 all : $(OUTPUT)  test
 
