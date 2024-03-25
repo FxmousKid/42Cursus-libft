@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/25 00:03:10 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:00:28 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,21 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
+
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void	*content);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+int		ft_lstsize(t_list *lst);
+
 
 size_t	ft_strlen(char const *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
