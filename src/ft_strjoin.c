@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:55:50 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 21:11:54 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/24 23:07:41 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	calc_size_malloc(char const *s1, char const *s2)
 static char	*ft_strcat(char *dest, char const *src)
 {
 	int	counter;
-	
+
 	if (src == NULL)
 		return (NULL);
 	counter = 0;
