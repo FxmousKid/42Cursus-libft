@@ -6,12 +6,12 @@
 I made a main file that can test all your function, and is progress-agnostic, which basically makes it not test the functions that arent availlable in 
 the libft.h header.
 
-### Be sure to use you use this file strcuture for the includes in all the source files and the makefile to work:
+### Be sure to use you use this file strcuture for all  .c and .h files and the my makefile to work:
 
 <br/>
 
 ```
-├── Makfile
+├── Makfile    <- this the makefile of this repo !
 ├── include/
 │   └── libft.h
 └── src/
