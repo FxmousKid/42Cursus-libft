@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/26 10:01:37 by inazaria         ###   ########.fr        #
+#    Updated: 2024/03/26 15:16:32 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -43,7 +43,7 @@ CC                 = cc
 
 RM                 = rm -rf 
 
-TEST_LIBRARY       = @$(CC) $(OBJ_FILES) $(OBJ_FILES_BONUS) -o test_library
+TEST_LIBRARY       = @$(CC) $(CFLAGS) $(OBJ_FILES) $(OBJ_FILES_BONUS) -o test_library
 
 .c.o :
 	@$(CC) $(CFLAGS) -I $(HEADERPATH) -c $< -o $(<:.c=.o)
