@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:23:10 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/25 11:18:58 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/25 18:28:09 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	if (lst == NULL)
 		return ;
 	new->next = *lst;
-	*lst = new;
+	lst = &new;
 }
