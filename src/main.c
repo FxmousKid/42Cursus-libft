@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:28:54 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/26 14:52:51 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:08:36 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1205,9 +1205,9 @@ void	test_ft_lstmap()
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("ft_lstmap(ft_lstlast(lst), func_test_lstmap, del_content)\n");
 	t_list *l = ft_lstmap(lst, func_test_lstmap, del_content);
-	printf("the list contents should be 'HELLO' -> 'WORLD' -> '!'\n");
-	printf("list is : '%s' -> '%s' -> '%s' \n", 
-		(char *)l->content, (char *)(l->next)->content, (char *)((l->next)->next)->content);
+	printf("the list contents should be 'HELLO' -> 'WORLD' -> '!' -> '(null)'\n");
+	printf("list is : '%s' -> '%s' -> '%s' -> '%s' \n", 
+		(char *)l->content, (char *)(l->next)->content, (char *)((l->next)->next)->content, (char *) (ft_lstlast(l)->next));
 	printf("------------Testing ft_lstmap-------------\n\n\n");	
 }
 
