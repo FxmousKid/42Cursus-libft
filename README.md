@@ -6,33 +6,25 @@
 I made a main file that can test all your function, and is progress-agnostic, which basically makes it not test the functions that arent availlable in 
 the libft.h header.
 
-### Be sure to use you use this file strcuture for all  .c and .h files and the my makefile to work:
+## Set up
 
-<br/>
-
+1) Put in in you src folder along your other codes :
 ```
-├── Makfile    <- this the makefile of this repo !
-├── include/
-│   └── libft.h
 └── src/
-    ├── bonus/
-    │   ├── ft_lstsize_bonus.c
-    │   └── *_bonus.c
-    ├── main.c    <- this is the main.c of this repo !
-    ├── ft_toupper.c
-    ├── ft_tolower.c
-    └── *.c
+    ├── main.c
+    ├── file1.c
+    ├── file2.c
+    └── ...
 ```
+2) Add it to your source files list in your Makefile
+
+3) add the test rule to your makefile :
+```Makefile
+test : $(OBJ_FILES)
+    $ cc -Wall -Wextra -werror $(OBJ_FILES) -o test_library
+```
+Where OBJ_FILES stores your object files, which can also be your bonus objects files.
 
 <br/>
 
-Now to use it, you have to edit my makefile accordingly to your progression, which is inevitable sadly.
-So let's say if you have completed only ft_atoi, your "C_FILES" variable in your makefile would have to look like this :
-```
-C_FILES = ft_atoi.c
-```
-And just add more functions as you go, same thing for your "C_FILES_BONUS" variable
-
-<br/>
-
-
+and now make test should generale **test_library** which when executed runs the tests  
