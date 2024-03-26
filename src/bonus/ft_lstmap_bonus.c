@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:13:39 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/26 12:40:27 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:00:57 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	tmp_orig = lst;
 	while (tmp_orig != NULL)
 	{
-		*tmp = (t_list){.content = f(tmp_orig->content), .next = tmp + 1};
+		if (tmp_orig->next != NULL)
+			*tmp = (t_list){.content = f(tmp_orig->content), .next = tmp + 1};
+		else
+			*tmp = (t_list){.content = f(tmp_orig->content), .next = NULL};
 		tmp++;
 		tmp_orig = tmp_orig->next;
 	}
