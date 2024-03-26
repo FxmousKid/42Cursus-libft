@@ -21,7 +21,7 @@ the libft.h header.
 3) add the test rule to your makefile :
 ```Makefile
 test : $(OBJ_FILES)
-    $ cc -Wall -Wextra -Werror $(OBJ_FILES) -o test_library
+    cc -Wall -Wextra -Werror $(OBJ_FILES) -o test_library
 ```
 Where OBJ_FILES stores your object files, which can also be your bonus objects files.
 
