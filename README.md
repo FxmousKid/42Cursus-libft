@@ -27,4 +27,4 @@ Where OBJ_FILES stores your object files, which can also be your bonus objects f
 
 <br/>
 
-and now make test should generale **test_library** which when executed runs the tests  
+and now executing ```make test``` i. the root of your project should generate **test_library** which when executed runs the tests  
