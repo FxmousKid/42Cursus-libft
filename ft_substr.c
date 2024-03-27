@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 void	substr_aux(char *dest, char const *s, unsigned int start, size_t len)
 {
