@@ -6,13 +6,13 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/27 12:28:02 by inazaria         ###   ########.fr        #
+#    Updated: 2024/03/28 21:47:09 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
     
 SRC_FILES        = \
-				ft_strlen.c  ft_toupper.c   main.c         ft_tolower.c    ft_substr.c     \
+				ft_strlen.c  ft_toupper.c   ft_tolower.c   ft_substr.c                     \
 				ft_strrch.c  ft_strnstr.c   ft_strncmp.c   ft_strmapi.c    ft_strlcpy.c    \
 				ft_strlcat.c ft_strjoin.c   ft_striteri.c  ft_strdup.c     ft_strchr.c     \
 				ft_split.c   ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_putchar_fd.c \
@@ -49,11 +49,11 @@ $(OUTPUT) : $(OBJ_FILES)
 	ar rcs $(OUTPUT) $(OBJ_FILES)	
 
 clean : $(OBJ_FILES)
-	$(RM) $(OBJ_FILES) 
+	$(RM) $(OBJ_FILES) $(OBJ_FILES_BONUS)
 	
 
 fclean : clean
-	$(RM) $(OUTPUT) $(OBJ_FILES_BONUS)
+	$(RM) $(OUTPUT)
 	
 
 re : fclean all 
