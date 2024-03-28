@@ -6,18 +6,19 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:05:07 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/25 01:44:05 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:42:56 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
+#include <limits.h>
 #include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*tab;
 
-	if (nmemb && size && nmemb > UINT_MAX / size)
+	if (nmemb && size && nmemb > ULONG_MAX / size)
 		return (NULL);
 	tab = malloc(nmemb * size);
 	if (tab == NULL)

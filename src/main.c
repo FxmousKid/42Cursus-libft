@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:28:54 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/27 11:42:38 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:28:38 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -848,10 +848,10 @@ void	test_ft_calloc()
 	printf("   calloc(10, %ld) = '%s' \n", sizeof(int), tab1);
 	printf("ft_calloc(10, %ld) = '%s' \n", sizeof(int), tab);
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-//	char *tab2 = ft_calloc(INT_MAX, sizeof(int));
-//	char *tab3 =   calloc(INT_MAX, sizeof(int));
-//	printf("   calloc(%d, %ld) = '%s' \n", INT_MAX, sizeof(int), tab3);
-//	printf("ft_calloc(%d, %ld) = '%s' \n", INT_MAX, sizeof(int), tab2);
+	char *tab2 = ft_calloc(INT_MAX, sizeof(int));
+	char *tab3 =   calloc(INT_MAX, sizeof(int));
+	printf("   calloc(%d, %ld) = '%s' \n", INT_MAX, sizeof(int), tab3);
+	printf("ft_calloc(%d, %ld) = '%s' \n", INT_MAX, sizeof(int), tab2);
 	printf("------------Testing ft_calloc-------------\n\n\n");
 }
 
