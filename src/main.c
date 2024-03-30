@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:28:54 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/28 16:28:38 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/30 20:30:53 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	count_words(char *str, char *sep)
 	return (wordcount);
 }
 
-size_t	ft_strlen(char const *s) __attribute__((weak));
+size_t	ft_strlen(const char *s) __attribute__((weak));
 
 void	test_ft_strlen(char *strs[], int size)
 {
