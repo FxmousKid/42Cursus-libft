@@ -6,13 +6,13 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 00:41:11 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 21:16:19 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/03/30 20:30:21 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-size_t	ft_strlen(char const *s)
+size_t	ft_strlen(const char *s)
 {
 	int	counter;
 
