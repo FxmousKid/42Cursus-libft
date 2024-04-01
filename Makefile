@@ -6,58 +6,46 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/03/28 21:47:09 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/01 12:11:41 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
-    
-SRC_FILES        = \
-				ft_strlen.c  ft_toupper.c   ft_tolower.c   ft_substr.c                     \
-				ft_strrch.c  ft_strnstr.c   ft_strncmp.c   ft_strmapi.c    ft_strlcpy.c    \
-				ft_strlcat.c ft_strjoin.c   ft_striteri.c  ft_strdup.c     ft_strchr.c     \
-				ft_split.c   ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_putchar_fd.c \
-				ft_memset.c  ft_memmove.c   ft_memcpy.c    ft_memcmp.c     ft_memchr.c     \
-				ft_isprint.c ft_isdigit.c   ft_isascii.c   ft_isalpha.c    ft_isalnum.c    \
-				ft_calloc.c  ft_bzero.c     ft_atoi.c      ft_itoa.c       ft_strtrim.c 
 
-SRC_FILES_BONUS  =	ft_lstmap_bonus.c    ft_lstiter_bonus.c      ft_lstclear_bonus.c \
-					ft_lstdelone_bonus.c ft_lstadd_back_bonus.c  ft_lstlast_bonus.c  \
-					ft_lstsize_bonus.c   ft_lstadd_front_bonus.c ft_lstnew_bonus.c
+SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
+					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
+					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c  ft_strlcpy.c \
+					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_strrch.c \
+					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strchr.c \
+					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
+					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c
 
-TEST_TXT_FILES = 	Test_ft_putchar_fd.txt        Test_ft_putendl_fd.txt        \
-					Test_ft_putnbr_fd_INT_MAX.txt Test_ft_putnbr_fd_INT_MIN.txt \
-					Test_ft_putnbr_fd_minus_1.txt Test_ft_putstr_fd.txt
+OBJS			= $(SRCS:.c=.o)
 
-OBJ_FILES_BONUS    = $(SRC_FILES_BONUS:.c=.o)
-OBJ_FILES          = $(SRC_FILES:.c=.o)
+BONUS			=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
+					ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
+					ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+BONUS_OBJS		= $(BONUS:.c=.o)
 
-CFLAGS             = -Wall -Wextra -Werror -g3 -I ./
-OUTPUT             = libft.a 
-CC                 = cc
+CC				= gcc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror -I.
 
-RM                 = rm -rf 
+NAME			= libft.a
 
-.c.o :
-	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+all:			$(NAME)
 
-all : $(OUTPUT)
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
-bonus : $(OBJ_FILES) $(OBJ_FILES_BONUS)	
-	ar rcs $(OUTPUT) $(OBJ_FILES) $(OBJ_FILES_BONUS) 	
+clean:
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
-$(OUTPUT) : $(OBJ_FILES)
-	ar rcs $(OUTPUT) $(OBJ_FILES)	
+fclean:			clean
+				$(RM) $(NAME)
 
-clean : $(OBJ_FILES)
-	$(RM) $(OBJ_FILES) $(OBJ_FILES_BONUS)
-	
+re:				fclean $(NAME)
 
-fclean : clean
-	$(RM) $(OUTPUT)
-	
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-re : fclean all 
-
-.PHONY : all clean fclean re bonus
-
-
+.PHONY:			all clean fclean re bonus
