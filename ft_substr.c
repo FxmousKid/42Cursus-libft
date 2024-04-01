@@ -6,30 +6,36 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:51:10 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/24 15:36:32 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:17:14 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	substr_aux(char *dest, char const *s, unsigned int start, size_t len)
-{
-	char	*tmp;
-
-	tmp = dest;
-	while (start < len)
-		*tmp++ = s[start++];
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
+	size_t	new_len;
 
-	if (s == NULL || start >= len)
+	if (!s)
 		return (NULL);
-	sub = (char *) malloc(sizeof(char) * (ft_strlen(s) - start));
-	if (sub == NULL)
-		return (NULL);
-	substr_aux(sub, s, start, len);
+	if (ft_strlen(s) < start)
+	{
+		sub = ft_calloc(1, sizeof(char));
+		if (!sub)
+			return (NULL);
+	}
+	else
+	{
+		new_len = ft_strlen(s + start);
+		if (!(new_len < len))
+			new_len = len;
+		sub = (char *)malloc((new_len + 1) * sizeof(char));
+		if (!sub)
+			return (NULL);
+		sub[new_len] = 0;
+		while (new_len-- > 0)
+			sub[new_len] = s[start + new_len];
+	}
 	return (sub);
 }
