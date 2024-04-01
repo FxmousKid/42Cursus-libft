@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:51:45 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 21:12:46 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:42:20 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	add_trim_str(char *dest, char const *s1, char const *set)
 	}
 	while (start < end)
 		*tmp++ = s1[start++];
+	*tmp = '\0';
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
