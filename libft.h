@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/30 20:35:16 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 11:50:39 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
-
 
 typedef struct s_list
 {
