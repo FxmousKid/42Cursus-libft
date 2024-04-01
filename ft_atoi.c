@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:05:43 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/26 09:35:19 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:22:05 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(char const *nptr)
 
 	rendue = 0;
 	sign = 1;
-	while (*nptr >= '\t' && *nptr <= '\r')
+	while ((*nptr >= '\t' && *nptr <= '\r') || *nptr == ' ')
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
