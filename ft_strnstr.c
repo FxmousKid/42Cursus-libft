@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:52:59 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/24 01:53:34 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:45:55 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 	idx = 0;
 	len_small = ft_strlen(small);
 	len_big = ft_strlen(big);
-	while (len_big - idx >= len_small && idx < len)
+	while (len_big - idx >= len_small && idx + len_small < len)
 	{
 		if (strncmp(big + idx++, small, len_small) == 0)
 			return ((char *) big + --idx);
