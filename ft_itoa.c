@@ -6,18 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:02:30 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 21:11:28 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:40:22 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	powerof10(int n)
-{
-	if (n == 0)
-		return (1);
-	return (10 * powerof10(n - 1));
-}
 
 static int	calc_size_malloc(long num)
 {
@@ -34,7 +27,7 @@ static int	calc_size_malloc(long num)
 	return (size_malloc);
 }
 
-static	void	add_int_to_string(char *dest, long num, int exp_10)
+static	void	add_int_to_string(char *dest, long num, int size_malloc)
 {
 	char	*tmp;
 
@@ -42,15 +35,16 @@ static	void	add_int_to_string(char *dest, long num, int exp_10)
 	if (num < 0)
 	{
 		*tmp++ = '-';
-		exp_10--;
+		size_malloc--;
 		num = -num;
 	}
+	tmp[size_malloc--] = 0;
 	while (num > 9)
 	{
-		*tmp++ = (num / powerof10(exp_10)) + '0';
-		num = num % powerof10(exp_10--);
+		tmp[size_malloc--] = (num % 10) + '0';
+		num = num / 10;
 	}
-	*tmp = num + '0';
+	tmp[0] = num + '0';
 }
 
 static char	*ft_itoa_long(long num)
@@ -59,10 +53,10 @@ static char	*ft_itoa_long(long num)
 	char	*str;
 
 	size_malloc = calc_size_malloc(num);
-	str = (char *) malloc(sizeof(char) * size_malloc);
+	str = (char *) malloc(sizeof(char) * size_malloc + 1);
 	if (str == NULL)
 		return (NULL);
-	add_int_to_string(str, num, size_malloc - 1);
+	add_int_to_string(str, num, size_malloc);
 	return (str);
 }
 
