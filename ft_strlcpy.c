@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:55:06 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 18:24:07 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:06:01 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	counter = 0;
 	len_src = ft_strlen(src);
+	if (!dst || !src)
+		return (0);
+	if (size == 0)
+		return (len_src);
 	while (counter < size - 1 && src[counter])
 	{
 		dst[counter] = src[counter];
