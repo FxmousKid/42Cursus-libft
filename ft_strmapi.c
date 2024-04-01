@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:54:48 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 01:17:55 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:23:05 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	map_on_str(char *dest, char const *s, char (*f)(unsigned int, char))
 	counter = -1;
 	while (s[++counter])
 		dest[counter] = f(counter, s[counter]);
+	dest[counter] = '\0';
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
