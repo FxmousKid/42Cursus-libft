@@ -11,7 +11,6 @@
 - **ft_memset**: Set bytes in a block of memory.
 - **ft_bzero**: Zero out bytes in a block of memory.
 - **ft_memcpy**: Copy memory area.
-- **ft_memccpy**: Copy string until a specified character is found.
 - **ft_memmove**: Copy memory area, handling overlapping regions.
 - **ft_memchr**: Locate character in block of memory.
 - **ft_memcmp**: Compare two blocks of memory.
@@ -27,6 +26,19 @@
 - **ft_strncmp**: Compare two strings with length control.
 - **ft_atoi**: Convert string to integer.
 - **ft_strdup**: Duplicate a string.
+- **ft_substr**: Allocate and return a substring of a string.
+- **ft_strjoin**: Concatenate two strings.
+- **ft_strtrim**: Trim leading and trailing characters from a string.
+- **ft_split**: Split a string into an array of substrings.
+- **ft_itoa**: transforms a int into a C string
+- **ft_strmapi**: applies a function to array elems and returns the new array
+- **ft_striteri**: applies a function directly on array elements
+
+#### File Functions
+- **ft_putchar_fd**: Output a character to a file descriptor.
+- **ft_putstr_fd**: Output a string to a file descriptor.
+- **ft_putendl_fd**: Output a string followed by a newline to a file descriptor.
+- **ft_putnbr_fd**: Output an integer to a file descriptor.
 
 #### Character Functions
 - **ft_isalpha**: Check if character is alphabetic.
@@ -35,15 +47,19 @@
 - **ft_isascii**: Check if character is ASCII.
 - **ft_isprint**: Check if character is printable.
 
+<br/>
+
 ### Bonus Part
 
-#### List Functions
+#### Linked List Functions
 - **ft_lstnew**: Allocate and initialize a new list node.
 - **ft_lstadd_front**: Add a node to the beginning of a list.
 - **ft_lstsize**: Count the number of nodes in a list.
 - **ft_lstlast**: Retrieve the last node of a list.
 - **ft_lstadd_back**: Add a node to the end of a list.
 - **ft_lstdelone**: Delete a node from a list.
+- **ft_lstiter**: Iterate over a list and apply a function to each element.
+- **ft_lstmap**: Create a new list resulting from the application of a function to each element of a list.
 
 
 # 🪧 Usage 
