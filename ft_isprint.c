@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:02:48 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/22 22:57:23 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:42:50 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_isprint(int c)
 {
 	int	rendue;
 
-	rendue = !((c >= 0 && c <= 31) || c == 127);
-	return (rendue * 16384 * (c >= 0));
+	rendue = (c >= 32 && c <= 126);
+	return (rendue * 16384);
 }

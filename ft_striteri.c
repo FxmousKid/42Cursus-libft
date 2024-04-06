@@ -6,18 +6,21 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:56:21 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/23 19:46:54 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:49:17 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int	counter;
+	int	i;
 
-	counter = 0;
-	while (s[counter])
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		f(counter, s + counter);
-		counter++;
+		(*f)(i, &s[i]);
+		i++;
 	}
+	s[i] = '\0';
 }

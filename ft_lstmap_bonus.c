@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:13:39 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/27 12:20:50 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:32:43 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		tmp++;
 		tmp_orig = tmp_orig->next;
 	}
-	ft_lstclear(&lst, del);
 	return (new_lst);
 }

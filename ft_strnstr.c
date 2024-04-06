@@ -6,27 +6,34 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:52:59 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 13:45:55 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:36:27 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *small, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t	idx;
-	size_t	len_small;
-	size_t	len_big;
+	size_t	i;
+	size_t	j;
 
-	if (*small == '\0')
-		return ((char *) big);
-	idx = 0;
-	len_small = ft_strlen(small);
-	len_big = ft_strlen(big);
-	while (len_big - idx >= len_small && idx + len_small < len)
+	i = 0;
+	if (!str && !len)
+		return (0);
+	if (to_find[0] == '\0' || to_find == str)
+		return ((char *)str);
+	while (str[i] != '\0')
 	{
-		if (strncmp(big + idx++, small, len_small) == 0)
-			return ((char *) big + --idx);
+		j = 0;
+		while (str[i + j] == to_find[j] && (i + j) < len)
+		{
+			if (str[i + j] == '\0' && to_find[j] == '\0')
+				return ((char *)&str[i]);
+			j++;
+		}
+		if (to_find[j] == '\0')
+			return ((char *)(str + i));
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
