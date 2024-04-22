@@ -68,4 +68,4 @@
  2. ```make``` to get the **libftprintf.a** file, 
  3. move **libftpritnf.a** and **ft_printf.h** to where you you have your project
  4. include the ```libft.h``` header in your header / main.c
- 5. Compile for example your main.c with ```cc [your flags] -I . main.c libft.a```
+ 5. Compile for example your main.c with ```cc [your flags] -I [your include dir] main.c libft.a```
