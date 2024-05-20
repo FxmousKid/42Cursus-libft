@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:05:07 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/28 16:52:58 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:35:37 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*tab;
 
-	if (nmemb && size && nmemb > ULONG_MAX / size)
+	if (nmemb && size && nmemb > UINT_MAX / size)
 		return (NULL);
 	tab = malloc(nmemb * size);
 	if (tab == NULL)
