@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:00:38 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/24 22:15:10 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:41:22 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*dest_ptr;
 	char	*src_ptr;
 
+	if (!dest && !src)
+		return (NULL);
 	dest_ptr = (char *) dest;
 	src_ptr = (char *) src;
 	counter = -1;
