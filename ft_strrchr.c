@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_strrch(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	rev_idx;
 
