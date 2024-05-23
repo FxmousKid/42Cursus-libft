@@ -59,7 +59,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *big, const char *small, size_t len);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strrch(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 
 void	*ft_memchr(const void *s, int c, size_t n);
