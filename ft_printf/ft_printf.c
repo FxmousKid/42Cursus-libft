@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:48:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/07 16:06:44 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:09:17 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,23 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	conv_table = make_conversion_table();
 	rendue = ft_printf_aux((char *) format, conv_table, args);
+	va_end(args);
+	return (rendue);
+}
+
+int	printf_clr(char *color, const char *format, ...)
+{
+	int					rendue;
+	va_list				args;
+	t_conversionFuncPtr	*conv_table;
+
+	if (format == NULL || color == NULL)
+		return (-1);
+	va_start(args, format);
+	conv_table = make_conversion_table();
+	ft_putstr(color);
+	rendue = ft_printf_aux((char *) format, conv_table, args);
+	ft_putstr("\033[0m");
 	va_end(args);
 	return (rendue);
 }
