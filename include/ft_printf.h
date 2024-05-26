@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:41:52 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/07 15:15:14 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:16:04 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,8 @@ t_conversionFuncPtr	*make_conversion_table(void);
 // Main function
 int					ft_printf(const char *format, ...)
 					__attribute__ ((format (printf, 1, 2)));
+
+int					printf_clr(char *clr, char *str, ...)
+					__attribute__ ((format (printf, 2, 3)));
 
 #endif
