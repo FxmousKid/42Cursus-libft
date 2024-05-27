@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/05/26 16:25:17 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/28 01:44:47 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_printf(const char *format, ...);
 int		printf_clr(char *color, const char *format, ...);
 
-int		get_next_line(int fd);
+char	*get_next_line(int fd);
 
 #endif 
