@@ -6,13 +6,13 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:57:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/03/24 23:07:19 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:50:52 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-static int	count_words(const char *str, char c)
+int	count_words(const char *str, char c)
 {
 	int	i;
 	int	trigger;
