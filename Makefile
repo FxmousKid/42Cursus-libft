@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/05/18 19:46:04 by inazaria         ###   ########.fr        #
+#    Updated: 2024/05/28 13:06:14 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -43,9 +43,11 @@ INC_DIR		= ./include/
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
+BONUS_LIBFT			=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 					ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
 					ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+
+BONUS = $(addprefix ./libft/, $(BONUS_LIBFT))
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
@@ -61,9 +63,9 @@ NAME			= libft.a
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) $(BONUS_OBJS)
 				
-				@ar rcs $(NAME) $(OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
 				@$(RM) $(OBJS) $(BONUS_OBJS)
