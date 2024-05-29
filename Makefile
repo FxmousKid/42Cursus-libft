@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/05/29 19:56:49 by inazaria         ###   ########.fr        #
+#    Updated: 2024/05/29 19:58:08 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -59,13 +59,13 @@ CFLAGS			= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE)
 NAME			= libft.a
 
 .c.o :
-	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS) $(BONUS_OBJS)
 				
-				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
 				@$(RM) $(OBJS) $(BONUS_OBJS)
