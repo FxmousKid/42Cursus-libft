@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/05/29 19:08:55 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/05/29 23:29:53 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,8 @@ int		printf_clr(char *color, const char *format, ...);
 char	*get_next_line(int fd);
 
 long long	ft_atoi_long(char *num);
+int			ft_atoi_base(char *str, char *base);
+long		ft_atoi_base_long(char *str, char *base);
+
+
 #endif 
