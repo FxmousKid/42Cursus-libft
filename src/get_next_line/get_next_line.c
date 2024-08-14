@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:40:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 13:58:18 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:03:31 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/get_next_line.h"
+#include "../../includes/get_next_line.h"
 
 char	*get_next_line_aux(int fd)
 {

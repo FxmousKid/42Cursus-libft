@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 11:35:04 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 13:58:03 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:03:38 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/get_next_line.h"
+#include "../../includes/get_next_line.h"
 
 ssize_t	ft_strlen_to_char(char *str, char c)
 {
