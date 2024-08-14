@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../includes/libft.h"
 
 static int	calc_size_malloc(long num)
 {

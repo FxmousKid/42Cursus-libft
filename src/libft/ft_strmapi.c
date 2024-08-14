@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../includes/libft.h"
 
 void	map_on_str(char *dest, char const *s, char (*f)(unsigned int, char))
 {
