@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../../includes/ft_printf.h"
 
 int	length_of_num(long num, char *base)
 {

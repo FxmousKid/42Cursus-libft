@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../../includes/ft_printf.h"
 
 t_args	c_conversion(t_args s_args)
 {

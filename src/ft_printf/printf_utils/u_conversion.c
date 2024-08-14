@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conversion.c                                     :+:      :+:    :+:   */
+/*   u_conversion.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 22:01:08 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 23:16:15 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/02 22:02:37 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/04 02:13:02 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../../includes/ft_printf.h"
 
-t_args	s_conversion(t_args s_args)
+t_args	u_conversion(t_args s_args)
 {
-	char	*result;
+	unsigned int	n;
+	int				len;
 
-	result = va_arg(s_args.args, char *);
-	if (result == NULL)
-	{
-		ft_putstr("(null)");
-		s_args.rendue += 6;
-		return (s_args);
-	}
-	ft_putstr(result);
-	s_args.rendue += ft_strlen(result);
+	n = va_arg(s_args.args, unsigned int);
+	ft_putnbr(n);
+	len = length_of_num(n, "0123456789");
+	s_args.rendue += len;
 	return (s_args);
 }

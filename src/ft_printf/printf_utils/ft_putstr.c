@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   percent_conversion.c                               :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 21:56:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/03 23:14:56 by inazaria         ###   ########.fr       */
+/*   Created: 2024/03/31 20:08:58 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/01 22:43:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../../includes/ft_printf.h"
 
-t_args	percent_conversion(t_args s_args)
+void	ft_putstr(char *str)
 {
-	ft_putchar('%');
-	s_args.rendue += 1;
-	return (s_args);
+	int	counter;
+
+	counter = 0;
+	while (str && str[counter])
+		write(1, &str[counter++], 1);
 }

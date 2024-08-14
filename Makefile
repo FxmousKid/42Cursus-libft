@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/05/29 23:30:14 by inazaria         ###   ########.fr        #
+#    Updated: 2024/08/05 22:06:02 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -40,17 +40,22 @@ SRCS += ./ft_printf/printf_utils/parsing_utils.c
 SRCS += ./ft_printf/printf_utils/percent_conversion.c
 SRCS += ./ft_printf/ft_printf.c
 
-INC_DIR		= ./include/
-
-OBJS			= $(SRCS:.c=.o)
-
 BONUS_LIBFT			=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 					ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
 					ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
 BONUS = $(addprefix ./libft/, $(BONUS_LIBFT))
+SRC_BONUS = $(addprefix ./src/, $(BONUS))
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+SRC = $(addprefix ./src/, $(SRCS))
+
+
+
+INC_DIR		= ./inludes/
+
+OBJS			= $(SRC:.c=.o)
+
+BONUS_OBJS		= $(SRC_BONUS:.c=.o)
 
 BUFFER_SIZE     = 1024 
 CC				= gcc
@@ -78,5 +83,5 @@ re:				fclean $(NAME)
 
 bonus:			$(OBJS) $(BONUS_OBJS)
 				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
+				
 .PHONY:			all clean fclean re bonus

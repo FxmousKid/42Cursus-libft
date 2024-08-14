@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/31 20:08:58 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/01 22:43:32 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/03 16:05:27 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/03 23:01:18 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "../../../includes/ft_printf.h"
 
-void	ft_putstr(char *str)
+void	ft_putnbr(long n)
 {
-	int	counter;
-
-	counter = 0;
-	while (str && str[counter])
-		write(1, &str[counter++], 1);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else
+		ft_putchar(n + '0');
 }

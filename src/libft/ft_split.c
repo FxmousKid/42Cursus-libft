@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:57:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/05/28 14:50:52 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:23:56 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../includes/libft.h"
 
 int	count_words(const char *str, char c)
 {
