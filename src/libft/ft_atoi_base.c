@@ -6,11 +6,11 @@
 /*   By: inazaria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 23:11:43 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/14 16:24:35 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:26:33 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/libft.h"
+#include "../../includes/libft.h"
 
 int	check_base(char *base)
 {
