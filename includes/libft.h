@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/19 10:32:21 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:29:07 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int			ft_atoi_base(char *str, char *base);
 long		ft_atoi_base_long(char *str, char *base);
 
 int			count_words(const char *str, char c);
+int			ft_strlen_till_char(char *str, char c);
 
 #endif 
