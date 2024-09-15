@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/08/05 22:06:02 by inazaria         ###   ########.fr        #
+#    Updated: 2024/09/15 22:13:01 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -18,7 +18,7 @@ SRCS_LIBFT		=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c 
 					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strchr.c \
 					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
 					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_atoi_long.c\
-					ft_atoi_base.c
+					ft_atoi_base.c ft_strlen_till_char.c
 
 SRCS = $(addprefix ./libft/, $(SRCS_LIBFT))
 
