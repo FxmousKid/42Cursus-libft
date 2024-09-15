@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/09/13 17:29:07 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/09/15 22:09:00 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,10 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
 
-int			ft_printf(const char *format, ...);
-int			printf_clr(char *color, const char *format, ...);
+int			ft_printf(const char *format, ...)
+			__attribute__ ((format (printf, 1, 2)));
+int			printf_clr(char *color, const char *format, ...)
+			__attribute__ ((format (printf, 2, 3)));
 
 char		*get_next_line(int fd);
 
