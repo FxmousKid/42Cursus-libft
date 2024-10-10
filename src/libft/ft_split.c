@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:57:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/10/10 20:29:29 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/10/10 23:38:35 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	occurences(char c, char *sep_charset)
 	return (0);
 }
 
-int	count_words(char *str, char *sep)
+int	count_words(char const *str, char *sep)
 {
 	int	wordcount;
 	int	f_change;

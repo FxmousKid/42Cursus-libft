@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/10/10 20:30:52 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/10/10 23:37:51 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ size_t		ft_strlen(const char *s);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 
-int			count_words(const char *str, char c);
+int			count_words(const char *str, char *sep);
 int			ft_atoi(char const *nptr);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
@@ -87,7 +87,6 @@ long long	ft_atoi_long(char *num);
 int			ft_atoi_base(char *str, char *base);
 long		ft_atoi_base_long(char *str, char *base);
 
-int			count_words(const char *str, char *sep);
 int			ft_strlen_till_char(char *str, char c);
 
 #endif 
