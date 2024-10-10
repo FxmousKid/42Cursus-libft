@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 01:16:40 by inazaria          #+#    #+#             */
-/*   Updated: 2024/09/15 22:09:00 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:30:52 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char		*ft_itoa(int num);
-char		**ft_split(char const *s, char c);
+char		**ft_split(char *str, char *seps);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
@@ -87,7 +87,7 @@ long long	ft_atoi_long(char *num);
 int			ft_atoi_base(char *str, char *base);
 long		ft_atoi_base_long(char *str, char *base);
 
-int			count_words(const char *str, char c);
+int			count_words(const char *str, char *sep);
 int			ft_strlen_till_char(char *str, char c);
 
 #endif 
