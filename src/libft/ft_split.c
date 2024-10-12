@@ -6,86 +6,71 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:57:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/10/10 23:38:35 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/10/12 21:54:11 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int	occurences(char c, char *sep_charset)
+int	count_words(const char *str, char c)
 {
-	while (sep_charset && c && *sep_charset)
-	{
-		if (c == *sep_charset++)
-			return (1);
-	}
-	if (c == '\0')
-		return (1);
-	return (0);
-}
+	int	i;
+	int	trigger;
 
-int	count_words(char const *str, char *sep)
-{
-	int	wordcount;
-	int	f_change;
-
-	if (str == NULL || sep == NULL)
-		return (0);
-	wordcount = 0;
-	f_change = 1;
+	i = 0;
+	trigger = 0;
 	while (*str)
 	{
-		wordcount += (f_change && !occurences(*str, sep));
-		f_change = (occurences(*str++, sep));
-	}
-	return (wordcount);
-}
-
-void	ft_strncpy(char *dest, char *src, char *sep)
-{
-	int	counter;
-
-	if (!src && !*src)
-		return ;
-	counter = -1;
-	while (src[++counter] && !occurences(src[counter], sep))
-		dest[counter] = src[counter];
-	dest[counter] = '\0';
-	return ;
-}
-
-void	sub_split(char **tab, char *str, char *charset)
-
-{
-	int	len_word;
-
-	len_word = 0;
-	while (str && charset && *str)
-	{
-		if (!occurences(*str, charset))
+		if (*str != c && trigger == 0)
 		{
-			while (!occurences(*(str + len_word), charset))
-				len_word++;
-			*tab = (char *) malloc((sizeof(char) * len_word) + 1);
-			if (*tab == NULL)
-				return ;
-			ft_strncpy(*tab++, str, charset);
-			str += len_word;
-			len_word = 0;
+			trigger = 1;
+			i++;
 		}
-		else if (occurences(*str, charset))
-			str++;
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-	*tab = NULL;
+	return (i);
 }
 
-char	**ft_split(char *str, char *charset)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	char	**tab;
+	char	*word;
+	int		i;
 
-	tab = (char **) malloc((sizeof(char *) * count_words(str, charset)) + 1);
-	if (tab == NULL)
-		return (0);
-	sub_split(tab, str, charset);
-	return (tab);
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
+
+	if (s == NULL)
+		return (NULL);
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (split == NULL)
+		return (NULL);
+	i = 0;
+	j = 0;
+	index = -1;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		{
+			split[j++] = word_dup(s, index, i);
+			index = -1;
+		}
+		i++;
+	}
+	return (split[j] = 0, split);
 }
