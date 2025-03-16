@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2024/09/15 22:13:01 by inazaria         ###   ########.fr        #
+#    Updated: 2025/03/16 10:34:38 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -57,7 +57,7 @@ OBJS			= $(SRC:.c=.o)
 
 BONUS_OBJS		= $(SRC_BONUS:.c=.o)
 
-BUFFER_SIZE     = 1024 
+BUFFER_SIZE     = 1
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE)
