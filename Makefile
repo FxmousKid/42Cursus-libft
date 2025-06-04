@@ -6,82 +6,141 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2025/03/16 10:34:38 by inazaria         ###   ########.fr        #
+#    Updated: 2025/06/04 15:14:51 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
+# Libft
+SRC_FILES_NAMES =  ./libft/ft_atoi_base.c
+SRC_FILES_NAMES += ./libft/ft_atoi.c
+SRC_FILES_NAMES += ./libft/ft_atoi_long.c
+SRC_FILES_NAMES += ./libft/ft_bzero.c
+SRC_FILES_NAMES += ./libft/ft_calloc.c
+SRC_FILES_NAMES += ./libft/ft_isalnum.c
+SRC_FILES_NAMES += ./libft/ft_isalpha.c
+SRC_FILES_NAMES += ./libft/ft_isascii.c
+SRC_FILES_NAMES += ./libft/ft_isdigit.c
+SRC_FILES_NAMES += ./libft/ft_isprint.c
+SRC_FILES_NAMES += ./libft/ft_itoa.c
+SRC_FILES_NAMES += ./libft/ft_lstadd_back_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstadd_front_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstclear_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstdelone_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstiter_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstlast_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstmap_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstnew_bonus.c
+SRC_FILES_NAMES += ./libft/ft_lstsize_bonus.c
+SRC_FILES_NAMES += ./libft/ft_memchr.c
+SRC_FILES_NAMES += ./libft/ft_memcmp.c
+SRC_FILES_NAMES += ./libft/ft_memcpy.c
+SRC_FILES_NAMES += ./libft/ft_memmove.c
+SRC_FILES_NAMES += ./libft/ft_memset.c
+SRC_FILES_NAMES += ./libft/ft_putchar_fd.c
+SRC_FILES_NAMES += ./libft/ft_putendl_fd.c
+SRC_FILES_NAMES += ./libft/ft_putnbr_fd.c
+SRC_FILES_NAMES += ./libft/ft_putstr_fd.c
+SRC_FILES_NAMES += ./libft/ft_split.c
+SRC_FILES_NAMES += ./libft/ft_strchr.c
+SRC_FILES_NAMES += ./libft/ft_strdup.c
+SRC_FILES_NAMES += ./libft/ft_striteri.c
+SRC_FILES_NAMES += ./libft/ft_strjoin.c
+SRC_FILES_NAMES += ./libft/ft_strlcat.c
+SRC_FILES_NAMES += ./libft/ft_strlcpy.c
+SRC_FILES_NAMES += ./libft/ft_strlen.c
+SRC_FILES_NAMES += ./libft/ft_strlen_till_char.c
+SRC_FILES_NAMES += ./libft/ft_strmapi.c
+SRC_FILES_NAMES += ./libft/ft_strncmp.c
+SRC_FILES_NAMES += ./libft/ft_strnstr.c
+SRC_FILES_NAMES += ./libft/ft_strrch.c
+SRC_FILES_NAMES += ./libft/ft_strtrim.c
+SRC_FILES_NAMES += ./libft/ft_substr.c
+SRC_FILES_NAMES += ./libft/ft_tolower.c
+SRC_FILES_NAMES += ./libft/ft_toupper.c
 
-SRCS_LIBFT		=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
-					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c  ft_strlcpy.c \
-					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_strrch.c \
-					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strchr.c \
-					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_atoi_long.c\
-					ft_atoi_base.c ft_strlen_till_char.c
 
-SRCS = $(addprefix ./libft/, $(SRCS_LIBFT))
+# Get next line
+SRC_FILES_NAMES += ./get_next_line/get_next_line.c
+SRC_FILES_NAMES += ./get_next_line/get_next_line_utils.c
 
-SRCS += ./get_next_line/get_next_line.c
-SRCS += ./get_next_line/get_next_line_utils.c
+# printf
+SRC_FILES_NAMES += ./ft_printf/printf_utils/c_conversion.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/d_and_i_conversions.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/ft_putchar.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/ft_putnbr.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/ft_putstr.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/length_of_num.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/p_conversion.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/s_conversion.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/u_conversion.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/x_and_X_conversions.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/conversion_utils.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/parsing_utils.c
+SRC_FILES_NAMES += ./ft_printf/printf_utils/percent_conversion.c
+SRC_FILES_NAMES += ./ft_printf/ft_printf.c
 
-SRCS += ./ft_printf/printf_utils/c_conversion.c
-SRCS += ./ft_printf/printf_utils/d_and_i_conversions.c
-SRCS += ./ft_printf/printf_utils/ft_putchar.c
-SRCS += ./ft_printf/printf_utils/ft_putnbr.c
-SRCS += ./ft_printf/printf_utils/ft_putstr.c
-SRCS += ./ft_printf/printf_utils/length_of_num.c
-SRCS += ./ft_printf/printf_utils/p_conversion.c
-SRCS += ./ft_printf/printf_utils/s_conversion.c
-SRCS += ./ft_printf/printf_utils/u_conversion.c
-SRCS += ./ft_printf/printf_utils/x_and_X_conversions.c
-SRCS += ./ft_printf/printf_utils/conversion_utils.c
-SRCS += ./ft_printf/printf_utils/parsing_utils.c
-SRCS += ./ft_printf/printf_utils/percent_conversion.c
-SRCS += ./ft_printf/ft_printf.c
-
-BONUS_LIBFT			=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
-					ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
-					ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
-
-BONUS = $(addprefix ./libft/, $(BONUS_LIBFT))
-SRC_BONUS = $(addprefix ./src/, $(BONUS))
-
-SRC = $(addprefix ./src/, $(SRCS))
-
-
-
+SRC_DIR 	= ./src/
 INC_DIR		= ./inludes/
+BUILD_DIR 	= ./build/
 
-OBJS			= $(SRC:.c=.o)
+# Full path to .c files
+SRC_FILES = $(addprefix $(SRC_DIR), $(SRC_FILES_NAMES))
 
-BONUS_OBJS		= $(SRC_BONUS:.c=.o)
+# .o files for compilation
+OBJ_FILES = $(patsubst $(SRC_DIR)%.c, $(BUILD_DIR)%.o, $(SRC_FILES))
+
+# .d files for header dependency
+DEP_FILES = $(patsubst $(SRC_DIR)%.c, $(BUILD_DIR)%.d, $(SRC_FILES))
+
+
+#<><><><><><><> Variables <><><><><><><><><><><><><><><><><>
 
 BUFFER_SIZE     = 1
-CC				= gcc
-RM				= rm -f
+CC				= cc
+RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE)
-
+ECHO			:= echo -e
 NAME			= libft.a
+MKDIR			= mkdir -p
 
-.c.o :
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+BLUE	:= $(shell echo -e "\033[34m") 
+BROWN	:= $(shell echo -e "\033[33m")
+GREEN	:= $(shell echo -e "\033[32m")
+RED		:= $(shell echo -e "\033[31m")
+NC		:= $(shell echo -e "\033[0m")
 
-all:			$(NAME)
 
-$(NAME):		$(OBJS) $(BONUS_OBJS)
-				
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+#<><><><><><><> Recipes <><><><><><><><><><><><><><><><><><>
 
-clean:
-				@$(RM) $(OBJS) $(BONUS_OBJS)
+$(BUILD_DIR)%.o: $(SRC_DIR)%.c
+	@$(MKDIR) $(dir $@)
+	@$(ECHO) "$(BLUE)[CMP] Compiling $<...$(NC)"
+	@$(CC) -c $(CFLAGS) $< -o $@ 
 
-fclean:			clean
-				@$(RM) $(NAME)
 
-re:				fclean $(NAME)
+# Adding the .d files as tracked dependencies
+-include $(DEP_FILES)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-				
+all: $(NAME)
+
+re: fclean all
+
+$(NAME): $(OBJ_FILES)
+	@$(ECHO) "$(BROWN)[LNK] Linking all object files into static library$(NC)"	
+	@ar rcs $(NAME) $(OBJ_FILES) 
+	@$(ECHO) "$(GREEN)[LNK] Linked all object files into $(NAME)$(NC)"
+
+clean : 
+	@$(ECHO) "$(BROWN)[CLN] Cleaning object and dependency files...$(NC)"
+	@$(RM) $(BUILD_DIR)
+	@$(ECHO) "$(GREEN)[CLN] Clean complete.$(NC)"
+
+fclean : 
+	@$(ECHO) "$(BROWN)[CLN] Cleaning object, dependency files, and executable...$(NC)"
+	@$(RM) $(BUILD_DIR) $(NAME)
+	@$(ECHO) "$(GREEN)[CLN] Clean complete.$(NC)"
+
+
+
+.DEFAULT_GOAL := all
 .PHONY:			all clean fclean re bonus
