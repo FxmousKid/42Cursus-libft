@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2025/06/04 15:14:51 by inazaria         ###   ########.fr        #
+#    Updated: 2025/07/31 16:00:46 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -98,7 +98,7 @@ DEP_FILES = $(patsubst $(SRC_DIR)%.c, $(BUILD_DIR)%.d, $(SRC_FILES))
 BUFFER_SIZE     = 1
 CC				= cc
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE)
+CFLAGS			= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE) -MMD -MP
 ECHO			:= echo -e
 NAME			= libft.a
 MKDIR			= mkdir -p
@@ -114,7 +114,7 @@ NC		:= $(shell echo -e "\033[0m")
 
 $(BUILD_DIR)%.o: $(SRC_DIR)%.c
 	@$(MKDIR) $(dir $@)
-	@$(ECHO) "$(BLUE)[CMP] Compiling $<...$(NC)"
+	@$(ECHO) "\033[34m[CMP] Compiling $<...$(NC)"
 	@$(CC) -c $(CFLAGS) $< -o $@ 
 
 
