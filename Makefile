@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 15:00:09 by inazaria          #+#    #+#              #
-#    Updated: 2025/07/31 16:13:10 by inazaria         ###   ########.fr        #
+#    Updated: 2025/12/10 15:36:45 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
     
@@ -96,18 +96,18 @@ DEP_FILES = $(patsubst $(SRC_DIR)%.c, $(BUILD_DIR)%.d, $(SRC_FILES))
 #<><><><><><><> Variables <><><><><><><><><><><><><><><><><>
 
 BUFFER_SIZE     = 1
-CC				= cc
-RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE) -MMD -MP
-ECHO			:= echo -e
-NAME			= libft.a
-MKDIR			= mkdir -p
+CC		= cc
+RM		= rm -rf
+CFLAGS		= -Wall -Wextra -Werror -I $(INC_DIR) -D BUFFER_SIZE=$(BUFFER_SIZE) -MMD -MP
+NAME		= libft.a
+MKDIR		= mkdir -p
 
-BLUE	:= $(shell echo -e "\033[34m") 
-BROWN	:= $(shell echo -e "\033[33m")
-GREEN	:= $(shell echo -e "\033[32m")
-RED		:= $(shell echo -e "\033[31m")
-NC		:= $(shell echo -e "\033[0m")
+BLUE	:= \033[34m
+BROWN	:= \033[33m
+GREEN	:= \033[32m
+RED	:= \033[31m
+NC	:= \033[0m
+ECHO	:= printf '%b\n'
 
 
 #<><><><><><><> Recipes <><><><><><><><><><><><><><><><><><>
